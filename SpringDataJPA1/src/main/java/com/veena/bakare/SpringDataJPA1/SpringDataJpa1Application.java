@@ -41,13 +41,19 @@ public class SpringDataJpa1Application {
 		//System.out.println("Products by ids="+pdsbyids);
 		//pd.getAllProductsByIDs(ids).forEach(n->System.out.println(n));
 		
-		Boolean status=pd.isProductAvailable(304);
+		/*Boolean status=pd.isProductAvailable(304);
 		if (status==true)
 		{
 			System.out.println("Product is available");
 		}
 		else
 			System.out.println("Product is not available");
+			*/
+		//System.out.println(pd.deleteProductById(304));
+		List<Integer> ids=Arrays.asList(305,4,1);
+		String status=pd.deleteProductsByIds(ids);
+	     System.out.println(status);
+		
 		
 	}
 

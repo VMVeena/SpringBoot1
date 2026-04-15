@@ -1,5 +1,6 @@
 package com.veena.bakare.SpringDataJPA1.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,4 +61,42 @@ public class ProductService implements IProductService{
 		
 	}
 
-}
+	@Override
+	public String deleteProductById(Integer id) {
+		Optional<Product> p=repo.findById(id);
+		if(p.isPresent())
+		{
+			repo.deleteById(id);
+			return "Product is deleted with id: "+id;
+		}
+		else
+			
+		return "Product is not present  with given id: "+id+"So Product is not deleted";
+	}
+
+	@Override
+	public String deleteProductsByIds(List<Integer> ids) {
+		List<Product> products = (List<Product>) repo.findAllById(ids);
+		if(products.size()!=0)
+		{
+			repo.deleteAllById(ids);
+			return "All Products records with given ids deleted";
+		}
+		else
+		{
+			return "Product info with given ids are not in records to delete";
+		}
+//		if(products.size()==ids.size())
+//		{
+//			repo.deleteAllById(ids);
+//			return "All Products records with given ids deleted";
+//		}
+//		else
+//		{
+//			return "Product info with given ids are not in records to delete";
+//		}
+	}
+
+	}
+
+

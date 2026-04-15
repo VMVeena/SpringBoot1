@@ -1,18 +1,20 @@
 package com.veena.bakare.SpringDataJPA1.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.veena.bakare.SpringDataJPA1.entity.Product;
 
 public interface IProductService {
 
-	public String SaveProduct(Product product);
-	public Iterable<Product> SaveAllProduct(Iterable <Product> products);
+	 String SaveProduct(Product product);
+	 Iterable<Product> SaveAllProduct(Iterable <Product> products);
 	//public String SaveAllProduct(Iterable <Product> products);
-	public Product getProductByID(Integer id);
-	public Iterable<Product> getAllProductsByIDs(Iterable<Integer> ids);
-	public Boolean isProductAvailable(Integer id);
-	
-	
+     Product getProductByID(Integer id);
+	 Iterable<Product> getAllProductsByIDs(Iterable<Integer> ids);
+	 Boolean isProductAvailable(Integer id);
+	String deleteProductById(Integer id);
+	String deleteProductsByIds(List<Integer>ids);
+
 	
 }
