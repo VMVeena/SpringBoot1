@@ -14,8 +14,8 @@ public class PagingSortingRepositoryApplication {
 		ConfigurableApplicationContext container=SpringApplication.run(PagingSortingRepositoryApplication.class, args);
 		IProductService service=container.getBean(IProductService.class);
 		//service.fetchProductInfoSorting(true, "price").forEach(p->System.out.println(p));
-		service.fetchProductByPagination(2,2,true, "price").forEach(p->System.out.println(p));
-		
+		//service.fetchProductByPagination(1,4,true, "price").forEach(p->System.out.println(p));
+		service.fetchProductByPagination(4);
 	}
 
 }

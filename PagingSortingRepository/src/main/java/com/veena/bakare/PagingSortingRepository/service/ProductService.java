@@ -33,4 +33,24 @@ public class ProductService implements IProductService {
 		
 	}
 	
+	@Override
+	public void fetchProductByPagination(int pgSize)
+	{
+		long count=6l;
+		long pagecount= count/pgSize; //==> 12/3 ==> 4
+		//14/5 ==> 2.8 ==> 2 ==> 3
+		//14%5 == 0 ? increment pagecount
+		//14%2 == 0 ? keep pagecount
+		pagecount = count%pgSize==0?pagecount:++pagecount;
+		
+		for(int i=0;i<pagecount; i++)
+		{
+			PageRequest pageable=PageRequest.of(i, pgSize);
+			Page<Product> page = repo.findAll(pageable);
+			page.getContent().forEach(p->System.out.println(p));
+			System.out.println("**************************************");
+		}
+		
+	}
+	
 	}
