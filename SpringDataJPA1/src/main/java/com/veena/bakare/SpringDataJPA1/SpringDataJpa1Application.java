@@ -20,11 +20,11 @@ public class SpringDataJpa1Application {
 		IProductService pd=container.getBean(IProductService.class);
 		//Product p1=new Product("Watch","Fashion",2000.0,20);
 		//System.out.println(pd.SaveProduct(p1));
-		/*
+		
 		List<Product> products=new ArrayList<Product>();
 		
-		Product p2=new Product("Shirt","Fabric",1000.0,10);
-		Product p3=new Product("Mobile","Electronic",50000.0,40);
+		Product p2=new Product("Pant","Fabric",2000.0,50);
+		Product p3=new Product("Laptop","Electronic",10000.0,8);
 		Product p4=new Product("Book","Stationary",50000.0,600);
 		Product p5=new Product("Pen","Stationary",50000.0,40);
 		products.add(p2);
@@ -32,7 +32,7 @@ public class SpringDataJpa1Application {
 		products.add(p4);
 		products.add(p5);
 		pd.SaveAllProduct(products).forEach(n->System.out.println(n));
-		//System.out.println(pd.SaveAllProduct(products)); */
+		//System.out.println(pd.SaveAllProduct(products)); 
 		
 		//System.out.println("The product details by id is :"+pd.getProductByID(302));
 		
@@ -50,9 +50,10 @@ public class SpringDataJpa1Application {
 			System.out.println("Product is not available");
 			*/
 		//System.out.println(pd.deleteProductById(304));
-		List<Integer> ids=Arrays.asList(305,4,1);
+		/*List<Integer> ids=Arrays.asList(305,4,1);
 		String status=pd.deleteProductsByIds(ids);
 	     System.out.println(status);
+	     */
 		
 		
 	}
